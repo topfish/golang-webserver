@@ -7,8 +7,11 @@ main文件是[webserver.go](https://github.com/topfish/webapp/blob/main/webserve
 
 [webserver.exe](https://github.com/topfish/webapp/blob/main/webserver.exe)同上，是Windows下的可执行文件
 
-# 打包为镜像：
+# 容器化操作：
 参考: [k8s](https://github.com/topfish/k8s)
+
+如果没有安装docker环境的，需要先安装docker。以centos为例，参考：
+[Install Docker Engine on CentOS](https://docs.docker.com/engine/install/centos/)
 
 ### Dockerfile
     FROM centos
