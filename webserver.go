@@ -4,12 +4,15 @@ import(
 	"net/http"
 	"webapp/myserver"
 	"webapp/mytemplate"
+	"fmt"
 )
 
 func main() {
 	server := http.Server{
 		Addr: ":80",
 	}
+	fmt.Println("Hello I Am WebServer")
+
 	http.HandleFunc("/", myserver.ServerList)
 	http.HandleFunc("/getcookie", myserver.Mysetcookie)
 	http.HandleFunc("/mybody", myserver.Mybody)
