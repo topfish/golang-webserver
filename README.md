@@ -27,8 +27,14 @@ main文件是[webserver.go](https://github.com/topfish/webapp/blob/main/webserve
 - 然后运行以下命令来构建镜像:
 -     $ docker build -t webserver:1.0 .     //此处镜像名称设置为 webserver:1.0。注意行尾的【.】
 
+## 验证：
+### 直接 docker run 方式
 - 运行以下命令用刚构建的镜像来启动容器：
 -     $ docker run -d -p 80:80 --name myweb webserver:1.0    //启动的容器名称是myweb，容器的80端口映射到主机的80端口上。
-
-## 验证：
 - 可以在主机（或公网）请求本机IP：80
+### 在k8s上运行
+- 需要先把本地的镜像推送到公网的仓库，比如，我使用了阿里云的镜像服务提供的仓库，镜像地址：
+-       registry.cn-hangzhou.aliyuncs.com/fishgo/webserver:1.0
+- 用镜像部署服务并暴露到公网，可参考下面的yaml文件
+-  ps:这个事例用了LoadBalancer的方式，会自动创建一个公网类型的SLB用于暴露服务到公网
+- [webapp.yaml](https://github.com/topfish/webapp/blob/main/webapp.yaml)
