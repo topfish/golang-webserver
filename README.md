@@ -3,7 +3,7 @@ this is webserver by go
 
 main文件是[webserver.go](https://github.com/topfish/webapp/blob/main/webserver.go)，可以直接编译
 
-[webserver](https://github.com/topfish/webapp/blob/main/webserver)是编译好的，Linux环境的可执行二进制文件，可以直接执行，也可以打包进进行
+[webserver](https://github.com/topfish/webapp/blob/main/webserver)是编译好的，Linux环境的可执行二进制文件，可以直接执行，也可以打包为镜像
 
 [webserver.exe](https://github.com/topfish/webapp/blob/main/webserver.exe)同上，是Windows下的可执行文件
 
