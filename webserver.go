@@ -13,7 +13,8 @@ func main() {
 	}
 	fmt.Println("Hello I Am WebServer")
 
-	http.HandleFunc("/", myserver.ServerList)
+	http.HandleFunc("/", mytemplate.MyHome)
+	http.HandleFunc("/list", myserver.ServerList)
 	http.HandleFunc("/getcookie", myserver.Mysetcookie)
 	http.HandleFunc("/mybody", myserver.Mybody)
 	http.HandleFunc("/header", myserver.HeaderReturn)
@@ -23,7 +24,6 @@ func main() {
 	http.HandleFunc("/write501", myserver.MyWriteHeader_501)
 	http.HandleFunc("/write302", myserver.MyWriteHeader_302)
 	http.HandleFunc("/none", mytemplate.MyProcess)
-	http.HandleFunc("/nginx", mytemplate.MyNginx)
 
 	err := server.ListenAndServe()
 	if err != nil {

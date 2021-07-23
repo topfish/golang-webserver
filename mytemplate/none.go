@@ -7,12 +7,14 @@ import(
 )
 
 func MyProcess(w http.ResponseWriter, r *http.Request) {
+	filename := "./mytemplate/tem.html"
 	CreateTemp()
-	t, _ := template.ParseFiles("/home/tem.html")
+	t, _ := template.ParseFiles(filename)
 	t.Execute(w, time.Now())
+	DeleteTemp(filename)
 }
 
-func MyNginx(w http.ResponseWriter, r *http.Request) {
-	t, _ := template.ParseFiles("/root/go/src/webapp/mytemplate/index.html")
+func MyHome(w http.ResponseWriter, r *http.Request) {
+	t, _ := template.ParseFiles("./mytemplate/index.html")
 	t.Execute(w, time.Now())
 }

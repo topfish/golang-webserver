@@ -1,21 +1,29 @@
 package mytemplate
 
 import(
-	"fmt"
 	"os"
 )
 
 func CreateTemp() {
-	newtemp, err := os.Create("/home/tem.html")
-	if err != nil{
-		fmt.Println(err)
-	}
+	newtemp, err := os.Create("./mytemplate/tem.html")
+	myerr(err)
 	defer newtemp.Close()
+	
 	str := `<body>
 	{{.}}
 	</body>`
+
 	_, err = newtemp.Write([]byte(str))
-	if err != nil{
-		fmt.Println(err)
+	myerr(err)
+}
+
+func DeleteTemp(filename string) {
+	err := os.Remove(filename)
+	myerr(err)
+}
+
+func myerr(err error) {
+	if err != nil {
+		panic(err)
 	}
 }
