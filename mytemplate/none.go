@@ -13,6 +13,6 @@ func MyProcess(w http.ResponseWriter, r *http.Request) {
 }
 
 func MyNginx(w http.ResponseWriter, r *http.Request) {
-	t, _ := template.ParseFiles("/usr/local/nginx/html/index.html")
+	t, _ := template.ParseFiles("/root/go/src/webapp/mytemplate/index.html")
 	t.Execute(w, time.Now())
 }
