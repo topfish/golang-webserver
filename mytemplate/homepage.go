@@ -15,6 +15,6 @@ func MyProcess(w http.ResponseWriter, r *http.Request) {
 }
 
 func MyHome(w http.ResponseWriter, r *http.Request) {
-	t, _ := template.ParseFiles("./mytemplate/index.html")
+	t, _ := template.ParseFiles("/etc/webapp/index.html")
 	t.Execute(w, time.Now())
 }
