@@ -33,3 +33,18 @@ spec:
     targetPort: 80
     protocol: TCP
   type: LoadBalancer
+  ---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: webapp
+  namespace: default
+spec:
+  rules:
+  - host: zichuandr.xyz
+    http:
+      paths:
+      - backend:
+          serviceName: svc-webapp
+          servicePort: 80
+        path: /
